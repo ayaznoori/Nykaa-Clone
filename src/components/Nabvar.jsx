@@ -3,11 +3,34 @@ import React from 'react';
 import {  SearchIcon} from '@chakra-ui/icons'
 import style from './Navbar.module.css'
 import InitialFocus from './SignModal';
+import { useContext,useEffect,useState } from 'react';
+import { Authcontext } from '../contexts/Authcontext';
+import { useNavigate } from 'react-router-dom';
+import {
+    Menu,
+    MenuButton,
+    MenuList,
+    Button,
+    MenuItem,
+    MenuItemOption,
+    MenuGroup,
+    MenuOptionGroup,
+    MenuDivider,
+  } from '@chakra-ui/react'
+import { Cartdrawer } from './Cartdrawer';
 const Nabvar = () => {
-    const handleclick=()=>{
-        alert("hi")
-        InitialFocus() ;
-    }
+    const [name,setname]=useState("");
+    const {isAuth,setisAuth}=useContext(Authcontext);
+    useEffect(()=>{
+         setname(JSON.parse(localStorage.getItem("userdata")).name)
+    },[isAuth])
+    const navigate=useNavigate();
+   const handleclick=()=>{
+       if(!isAuth)
+        navigate('/login')
+       else
+         navigate('/')
+   }
   return (
     <Box>
         <Stack spacing='0'>
@@ -67,13 +90,26 @@ const Nabvar = () => {
                     </HStack>
                     <HStack>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.9 21.5001C19.2866 21.5001 19.6 21.1867 19.6 20.8001C19.6 20.4135 19.2866 20.1001 18.9 20.1001C18.5134 20.1001 18.2 20.4135 18.2 20.8001C18.2 21.1867 18.5134 21.5001 18.9 21.5001Z" fill="#001325" fill-opacity="0.92"></path><path d="M15.9 21.5001C16.2866 21.5001 16.6 21.1867 16.6 20.8001C16.6 20.4135 16.2866 20.1001 15.9 20.1001C15.5134 20.1001 15.2 20.4135 15.2 20.8001C15.2 21.1867 15.5134 21.5001 15.9 21.5001Z" fill="#001325" fill-opacity="0.92"></path><path d="M12.9 21.5001C13.2866 21.5001 13.6 21.1867 13.6 20.8001C13.6 20.4135 13.2866 20.1001 12.9 20.1001C12.5134 20.1001 12.2 20.4135 12.2 20.8001C12.2 21.1867 12.5134 21.5001 12.9 21.5001Z" fill="#001325" fill-opacity="0.92"></path><path d="M12 4C12.7 4 13.3 4.2 13.8 4.7C14.3 5.2 14.5 5.9 14.5 6.6V6.7C14.5 7.4 14.3 8.2 13.8 8.7C12.8 9.7 11.2 9.7 10.2 8.7C9.69998 8.2 9.39998 7.5 9.39998 6.8V6.7C9.29998 5.3 10.3 4.1 11.7 4C11.8 4 11.9 4 12 4ZM12 2.5C9.79998 2.5 7.99998 4.3 7.99998 6.5C7.99998 6.6 7.99998 6.6 7.99998 6.7V6.8C7.89998 9 9.59998 10.9 11.8 11C11.9 11 11.9 11 12 11C13.1 11 14.1 10.6 14.9 9.8C15.7 9 16.1 7.9 16 6.8V6.6C16 5.5 15.6 4.4 14.8 3.6C14.1 2.9 13 2.5 12 2.5Z" fill="#001325" fill-opacity="0.92"></path><path d="M9.79999 21.5002H5.79999C5.39999 21.5002 4.99999 21.3002 4.69999 21.0002C4.39999 20.7002 4.29999 20.2002 4.39999 19.8002C4.99999 15.4002 8.99999 12.4002 13.4 13.0002C16.2 13.4002 18.6 15.2002 19.7 17.8002C19.8 18.2002 19.6 18.6002 19.2 18.8002C18.8 18.9002 18.4 18.8002 18.3 18.4002C17 15.1002 13.2 13.4002 9.89999 14.7002C7.69999 15.6002 6.09999 17.6002 5.79999 20.0002H9.79999C10.2 20.0002 10.6 20.3002 10.6 20.8002C10.6 21.3002 10.2 21.5002 9.79999 21.5002Z" fill="#001325" fill-opacity="0.92"></path></svg>
-                     <InitialFocus/>
+                  { !isAuth?<Text onClick={handleclick} _hover={{cursor:"pointer"}}>Account</Text>:
+                    <Menu>
+                    <MenuButton as={Button} bgColor='white' _hover={'none'} _focus={'none'}  >
+                    {name}
+                    </MenuButton>
+                    <MenuList  >
+                    <MenuItem>Order</MenuItem>
+                    <MenuItem>Profile</MenuItem>
+                    <MenuItem>Wallet</MenuItem>
+                    <MenuItem>Whishlist</MenuItem>
+                    <MenuItem onClick={()=>setisAuth(false)}>Logout</MenuItem>
+                    </MenuList>
+                    </Menu>}
                     </HStack>
                     <HStack>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path fill="#FFF" fill-opacity="0" d="M0 0h24v24H0z"></path><path fill="#fc2779" fill-rule="nonzero" d="M6.783 2.837c1.286-1.015 3.155-.871 4.21.306.548.509.959 1.228 1.271 2.114.45-.892.983-1.591 1.633-2.041l.137-.096a3.192 3.192 0 014.196.626c1.088 1.302.967 3.227-.25 4.36-.128.127-.27.248-.424.361h2.362c.95.043 1.727.807 1.772 1.815l-.003 1.703c-.08.993-.927 1.747-1.887 1.71h-.074v6.039a1.723 1.723 0 01-1.49 1.634l-.147.013H6.539a1.72 1.72 0 01-1.649-1.796v-5.89c-.985.025-1.82-.733-1.89-1.785v-1.66c.017-.494.231-.96.595-1.295a1.816 1.816 0 011.295-.489h2.755c-.546-.316-.961-.674-1.252-1.069a3.134 3.134 0 01.233-4.427zm11.064 10.868H6.78v5.786h11.067v-5.786zm-12.958-3.35l-.002 1.451 14.912-.001.001-1.449-14.911-.001zM16.78 4.957A1.303 1.303 0 0015 4.75l-.146.11c-.392.327-.78.927-1.123 1.721-.111.258-.214.527-.308.802l-.13.403.26-.02c1.523-.132 2.497-.475 3.026-.938l.089-.083a1.302 1.302 0 00.112-1.788zm-7.229-.585a1.243 1.243 0 00-1.661.003c-.511.46-.552 1.247-.036 1.826l.081.102c.438.504 1.317.957 2.758 1.28l.219.046-.056-.32a11.227 11.227 0 00-.125-.575l-.11-.417c-.243-.834-.56-1.46-.973-1.85z"></path></g></svg>
                     </HStack>
                     <HStack>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.5 7.2H16.2V6.9C16.3 4.5 14.4 2.5 12 2.5C9.6 2.6 7.8 4.5 7.8 6.9V7.2H3.5C2.9 7.2 2.5 7.6 2.5 8.2V16.4C2.5 19.2 4.7 21.4 7.5 21.4H16.5C19.3 21.4 21.5 19.2 21.5 16.4V8.2C21.5 7.7 21.1 7.2 20.5 7.2ZM9.3 6.9C9.3 5.4 10.5 4.1 12 4C13.5 4.1 14.7 5.4 14.7 6.9V7.2H9.3V6.9ZM20 16.5C20 18.4 18.4 20 16.5 20H7.5C5.6 20 4 18.4 4 16.5V8.7H7.8V10.7C7.6 10.9 7.5 11.2 7.5 11.4C7.5 12 8 12.4 8.5 12.4C9 12.4 9.5 11.9 9.5 11.4C9.5 11.1 9.4 10.9 9.2 10.7V8.7H14.6V10.6C14.4 10.8 14.3 11.1 14.3 11.4C14.3 12 14.7 12.5 15.3 12.5C15.9 12.5 16.4 12.1 16.4 11.5C16.4 11.2 16.3 11 16.1 10.8V8.8H20V16.5Z" fill="black"></path></svg>
+                    <Cartdrawer/>
+                   
                     </HStack>
                 </HStack>  
                 </HStack>   
