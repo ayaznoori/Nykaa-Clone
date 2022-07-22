@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Nabvar from './components/Nabvar';
 import InitialFocus from './components/SignModal';
 import Homepage from './Pages/Homepage';
+import Products from './Pages/Products';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
          <Routes>
           <Route path='/' element={<Homepage/>}/>
           <Route path='/login' element={<InitialFocus/>}/>
+          <Route path='/products' element={<Products/>}/>
          </Routes>
         <Footer/>
     </Box>
