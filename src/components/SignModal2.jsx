@@ -3,16 +3,16 @@ import {
     Modal,
     ModalOverlay,
     ModalContent,
-    ModalHeader,
+ 
     ModalFooter,
     ModalBody,
     ModalCloseButton,
-    Button,
+ 
     Input,
-     Box,
+ 
      useDisclosure,
     Text,
-    Link,
+ 
     HStack,
   
   } from '@chakra-ui/react'
@@ -43,7 +43,7 @@ function Modal2() {
            
             <ModalBody pb={6}>
             <Input   variant='filled'  borderRadius={1} borderColor='rgb(252,39,121)' onChange={(e)=>setdata({...data,number:e.target.value})} placeholder='Enter Phone Number or Email'   />
-             <Text textAlign='right'>{typeof(data.number)==''?"Required": "Enter Correct Email Id / Mobile Number"}</Text>
+             <Text textAlign='right'>   Enter Correct Email Id / Mobile Number </Text>
              <br/><br/>
              <Input   variant='filled'  borderRadius={1} borderColor='rgb(252,39,121)' onChange={(e)=>setdata({...data,name:e.target.value})} placeholder='Enter Your Name'/>
              <br/><br/><br/>

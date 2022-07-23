@@ -3,7 +3,7 @@ import {
     Modal,
     ModalOverlay,
     ModalContent,
-    ModalHeader,
+ 
     ModalFooter,
     ModalBody,
     ModalCloseButton,
@@ -12,7 +12,7 @@ import {
      Box,
      useDisclosure,
     Text,
-    Link,
+ 
     HStack,
   
   } from '@chakra-ui/react'
@@ -20,13 +20,14 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { useContext } from 'react';
 import {Authcontext} from '../contexts/Authcontext'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 function OtpModal() {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [otp,setotp]=useState("");
     let temp= JSON.parse(localStorage.getItem("userdata"));
     const navigate=useNavigate();
     const {isAuth,setisAuth}=useContext(Authcontext); 
+    const param=useParams();
     const handleclick=()=>{
           if(otp!="1234"){
             alert("Incorrect Otp")
@@ -61,6 +62,7 @@ function OtpModal() {
               
              <br/><br/>
               <Text>Please Enter the OTP sent to verify your mobile/email</Text><br/><br/>
+              <Text>Sample otp - 1234</Text>
               <Input variant='filled' placeholder='OTP' width='70%' type='Number' onChange={(e)=>setotp(e.target.value)}/>
               <br/><br/>
              <Button bgColor='rgb(252,39,121)' disabled={otp==""?true:false} isLoading={false} onClick={handleclick} _hover={{bgcolor:"rgb(252,39,118)"}} color='white' fontSize={18} width='100%'> PROCEED </Button>
