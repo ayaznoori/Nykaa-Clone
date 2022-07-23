@@ -3,12 +3,11 @@ import {
     Modal,
     ModalOverlay,
     ModalContent,
-    ModalHeader,
-    ModalFooter,
+   
     ModalBody,
     ModalCloseButton,
     Button,
-    Input,
+ 
      Box,
      useDisclosure,
     Text,
@@ -17,13 +16,14 @@ import {
   } from '@chakra-ui/react'
 import Modal2 from './SignModal2';
 import { useContext } from 'react';
-import { Authcontext, AuthProvider } from '../contexts/Authcontext';
+import { Authcontext  } from '../contexts/Authcontext';
 import { useEffect ,useState} from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 function InitialFocus() {
     const { isOpen, onOpen, onClose } = useDisclosure();
-    const {isAuth,setisAuth}=useContext(Authcontext);  
+    const {isAuth }=useContext(Authcontext);  
     const [name,setname]=useState("");
+    const param=useParams();
     const navigate=useNavigate();
     useEffect(()=>{
         if(isAuth){
@@ -34,10 +34,10 @@ function InitialFocus() {
           setname(JSON.parse(localStorage.getItem("userdata")).name)
     },[isAuth])
     const handleclick=()=>{
-          
+          alert('service under Maintaince. Use Mobile Login')
     }
     
-    
+ 
     return (
       <>
         <Modal

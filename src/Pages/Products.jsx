@@ -1,9 +1,11 @@
-import { Box, Grid, GridItem, HStack,Text, VStack } from '@chakra-ui/react'
-import React from 'react'
+import { Box, Grid, GridItem, HStack,  VStack } from '@chakra-ui/react'
+import {React,useState} from 'react'
 import { CollapseEx } from '../components/CollapseEx'
 import ProductAddToCart from '../components/Productcard'
+import { Sampledata } from '../sampledata/Sampledata'
 
 const Products = () => {
+  const [data ]=useState(Sampledata().items)
   return (
     <Box paddingTop='150px' backgroundColor={'rgb(243,243,243)'}>
     <Grid templateColumns='25% 70%' padding={'50px'} justifyContent='space-between' alignItems='top'>
@@ -24,19 +26,14 @@ const Products = () => {
         </HStack>
         <HStack height='600px' overflow='scroll' alignItems='top'  __css={{'&::-webkit-scrollbar':{display:'none'}}} >
             <Grid templateColumns={'1fr 1fr 1fr'} gap='20px'>
-            <GridItem><ProductAddToCart/></GridItem>
-            <GridItem><ProductAddToCart/></GridItem>
-            <GridItem><ProductAddToCart/></GridItem>
-            <GridItem><ProductAddToCart/></GridItem>
-            <GridItem><ProductAddToCart/></GridItem>
-            <GridItem><ProductAddToCart/></GridItem>
-            <GridItem><ProductAddToCart/></GridItem>
-            <GridItem><ProductAddToCart/></GridItem>
-            <GridItem><ProductAddToCart/></GridItem>
-            <GridItem><ProductAddToCart/></GridItem>
+              {data.map((ele)=>{
+                return <GridItem key={ele.id}><ProductAddToCart ele={ele}/></GridItem>
+              })}
+             
             </Grid>
         
         </HStack>
+ 
     </Grid>
     </Box>
   )
