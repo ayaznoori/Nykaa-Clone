@@ -65,18 +65,18 @@ Nykaa is an Indian e-commerce company, founded by Falguni Nayar in 2012 and head
 
 ## Functionalities
 
-- User can order food online.
+- User can order beauty product online.
 - Auth Login through Mobile Number
 - user able to Logout.
-- OnClick any Category user to get related foods..
-- On Add to Cart, users are able to see the cost of food on top in Navbar.
+- OnClick any Category user to get related product page..
+- On Add to Cart, users are able to see the Total cost in cart page.
 - user able to get multiple payment methods.
 
 ##  <- - - - - - -  - - - - - - - - - - - - - -Links and Acclaim - - - - - - - - - - - - - - - - - - - - - ->
 
 ## ‣ WebPage deployed link:
 
-- Github Repo LINK: 
+- Github Repo LINK: https://github.com/ayaznoori/adjoining-grain-7989
 
 - Netlify Link: 
 
@@ -99,7 +99,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- We take all the responsibility for every single line of code. The design inspires by **https://online.kfc.co.in/**.
+- We take all the responsibility for every single line of code. The design inspires by **https://www.nykaa.com/**.
 
 
 
