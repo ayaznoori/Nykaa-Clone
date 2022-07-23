@@ -50,25 +50,27 @@ Nykaa is an Indian e-commerce company, founded by Falguni Nayar in 2012 and head
 ## Glimpse and Screenshots of our cloned website:
 <table>
    <tr align=center>
-     <td  colspan=3>Landing Page<img src="https://miro.medium.com/max/1400/1*YFZ6Msu7spk95-P5ADaXLw.png" width=1000 ></td>
+     <td  colspan=3>Landing Page<img src="https://user-images.githubusercontent.com/89721816/180617613-1bd9fbca-2bda-4bbc-83b5-4919a508cc43.png" width=1000 ></td>
   </tr>
   <tr align=center>
-    <td>Menu Page<img src="https://miro.medium.com/max/1400/1*jx8S8r2meBnwBME_txfh6w.png" height=250></td>
-    <td>Account Page<img src="https://miro.medium.com/max/1400/1*jcqx9iT5j4wQIlHEDB6y7w.png" height=250></td>
-    <td>Help Page<img src="https://miro.medium.com/max/1400/1*NiNIHV07mmfPVhj0uGu6tw.png" height=250></td>
-  <tr align=center>
-   <td>Sign Up Page<img src="https://miro.medium.com/max/3822/1*RmNfD8odNlWduMPdbK4xMA.png" height=250 ></td>
-   <td>Cart Page<img src="https://cdn-images-1.medium.com/max/800/1*icg3B3MxOJqB1TBjEffH3g.png" height=250></td>
-   <td>Deal Page<img src="https://miro.medium.com/max/1400/1*8hjpEpkQBlvIWQ1ff_-gJA.png" height=250></td>
-  </tr>
+     <td>Sign in Page<img src="https://user-images.githubusercontent.com/89721816/180617641-0795f96c-14bc-4a58-be9f-d4a3d7828b94.png" height=250></td>
+    <td>Product Page<img src="https://user-images.githubusercontent.com/89721816/180617657-a562224d-daec-48b4-aa5e-b0f12f0d52f3.png" height=250></td>
+    <td>Product Preview Page<img src="https://user-images.githubusercontent.com/89721816/180617674-0742cb2c-c010-41a4-b7ae-4c0ed7c22dbd.png" height=250></td>
+   </tr>
+    <tr align=center>
+   <td>Cart Page<img src="https://user-images.githubusercontent.com/89721816/180617713-b4d94ea1-2e82-4582-ac3d-0b517b18fce5.png" height=250></td>
+   <td>Payment Page<img src="https://user-images.githubusercontent.com/89721816/180617737-8393fc33-5452-4989-a6d7-b4ddb49795e7.png" height=250></td>
+    <td>Order Confirm Page<img src="https://user-images.githubusercontent.com/89721816/180617747-2c909b84-93e8-465b-8122-62802020fc67.png" height=250 ></td>
+  </tr> 
+ 
 </table>
 
 ## Functionalities
 
 - User can order beauty product online.
 - Auth Login through Mobile Number
-- user able to Logout.
-- OnClick any Category user to get related product page..
+- User can Logout.
+- OnClick any Category user get related product page..
 - On Add to Cart, users are able to see the Total cost in cart page.
 - user able to get multiple payment methods.
 
@@ -78,19 +80,14 @@ Nykaa is an Indian e-commerce company, founded by Falguni Nayar in 2012 and head
 
 - Github Repo LINK: https://github.com/ayaznoori/adjoining-grain-7989
 
-- Netlify Link: 
-
-- Blog Link:  
-
-- A video link for an explanation of a Small Part of the Website:  
+- Netlify Link: https://monumental-biscotti-38dd3b.netlify.app/
 
 
  ⁍ **Mohammad Ayaz Noori**:
    
  - Linkedin: https://www.linkedin.com/in/mohammad-ayaz-noori-860321230
    
-       
-
+ 
 
 
 ## Show your support
