@@ -22,7 +22,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 function InitialFocus() {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const {isAuth }=useContext(Authcontext);  
-    const [name,setname]=useState("");
     const param=useParams();
     const navigate=useNavigate();
     useEffect(()=>{
@@ -31,7 +30,6 @@ function InitialFocus() {
         }
         else
           onOpen();
-          setname(JSON.parse(localStorage.getItem("userdata")).name)
     },[isAuth])
     const handleclick=()=>{
           alert('service under Maintaince. Use Mobile Login')
@@ -44,7 +42,7 @@ function InitialFocus() {
           isOpen={isOpen}
           onClose={onClose} 
         >
-          <ModalOverlay backgroundColor='rgb(243,243,243)' />
+          <ModalOverlay backgroundColor='rgb(243,243,243)'  />
        
           <ModalContent padding={6} width='370px' borderRadius={10} boxShadow='rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px'  >
           <ModalCloseButton onClick={()=>navigate('/')}  />

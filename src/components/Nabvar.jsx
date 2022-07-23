@@ -17,7 +17,8 @@ const Nabvar = () => {
     const [name,setname]=useState("");
     const {isAuth,setisAuth}=useContext(Authcontext);
     useEffect(()=>{
-         setname(JSON.parse(localStorage.getItem("userdata")).name)
+         let sample=JSON.parse(localStorage.getItem("userdata"))||{name:""};
+         setname(sample.name)
     },[isAuth])
     const navigate=useNavigate();
    const handleclick=()=>{
