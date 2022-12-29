@@ -80,7 +80,7 @@ Nykaa is an Indian e-commerce company, founded by Falguni Nayar in 2012 and head
 
 - Github Repo LINK: https://github.com/ayaznoori/adjoining-grain-7989
 
-- Netlify Link: https://monumental-biscotti-38dd3b.netlify.app/
+- Netlify Link: https://nykaa-clone-nooridev.netlify.app/
 
 
  ⁍ **Mohammad Ayaz Noori**:
